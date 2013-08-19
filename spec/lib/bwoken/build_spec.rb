@@ -85,7 +85,7 @@ describe Bwoken::Build do
       regexp = /
         xcodebuild\s+
         #{workspace_regex}\s+
-        -scheme\s#{scheme}\s+
+        -scheme\s'#{scheme}'\s+
         -configuration\s#{configuration}\s+
         -sdk\s#{sdk}\s+
         -xcconfig\s#{xcconfig}\s+

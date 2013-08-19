@@ -13,7 +13,7 @@ module Bwoken
     end
 
     def scheme
-      Bwoken.app_name
+      ENV['SCHEME'] || Bwoken.app_name
     end
 
     def configuration
@@ -49,7 +49,7 @@ module Bwoken
     def cmd
       "xcodebuild \
         #{Bwoken.workspace_or_project_flag} \
-        #{"-scheme #{scheme}" if Bwoken.xcworkspace} \
+        #{"-scheme '#{scheme}'" if Bwoken.xcworkspace} \
         -configuration #{configuration} \
         -sdk #{sdk} \
         -xcconfig #{xcconfig} \
